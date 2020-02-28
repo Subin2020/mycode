@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webby-deployment    
+  labels:
+    app: webby-app
+spec:
+  selector:
+    matchLabels:
+      app: webby-app
+  replicas: 2
+  template:
+    metadata: 
+      labels:
+        app: webby-app
+    spec:
+      containers:
+      - name: webby-app
+        image: reg.alta3.com/1519-subin-webby
+        ports:
+        - containerPort: 6600

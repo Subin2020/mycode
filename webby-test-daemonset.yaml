@@ -1,0 +1,14 @@
+---
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: webby
+spec:
+  template:
+    metadata:
+      labels:
+        app: webby
+    spec:
+      containers:
+      - image: 127.0.0.1:30500/webby
+        name: webby-test
